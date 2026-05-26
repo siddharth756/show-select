@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="pencil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#g)"/>
+  <!-- Selection bar -->
+  <rect x="16" y="52" width="96" height="24" rx="4" fill="rgba(255,255,255,0.18)"/>
+  <!-- Letter T -->
+  <text x="52" y="80" font-family="Arial,sans-serif" font-weight="bold" font-size="56" fill="white">T</text>
+  <!-- Pencil -->
+  <g transform="translate(88,24) rotate(45)">
+    <rect x="-5" y="-20" width="10" height="40" rx="1" fill="white"/>
+    <polygon points="-5,20 5,20 0,28" fill="url(#pencil)"/>
+    <rect x="-5" y="-20" width="10" height="6" rx="1" fill="#f87171"/>
+  </g>
+</svg>

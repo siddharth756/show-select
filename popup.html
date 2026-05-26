@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TextSync — Live Selection Mirror</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <!-- ─── Glow orbs (background decoration) ─── -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <!-- ─── Header ─── -->
+  <header class="header">
+    <div class="logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#logoGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <defs>
+          <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#a78bfa"/>
+            <stop offset="100%" stop-color="#6d28d9"/>
+          </linearGradient>
+        </defs>
+        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+      </svg>
+      <span class="logo-text">TextSync</span>
+    </div>
+    <span class="version-badge">v1.0</span>
+  </header>
+
+  <!-- ─── Status Card ─── -->
+  <section class="card status-card">
+    <div class="status-row">
+      <div class="status-indicator" id="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-label" id="status-label">Extension Active</span>
+      </div>
+      <div class="status-pill active" id="status-pill">Running</div>
+    </div>
+    <p class="status-desc" id="status-desc">
+      The floating panel is injected into every page you visit. Select text in any input or textarea to begin.
+    </p>
+  </section>
+
+  <!-- ─── How It Works ─── -->
+  <section class="card">
+    <h2 class="card-title">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+      How It Works
+    </h2>
+    <ol class="steps-list">
+      <li>
+        <span class="step-num">1</span>
+        <span>Navigate to any webpage with text inputs</span>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <span>Select text inside an <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, or contentEditable</span>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <span>The floating <strong>TextSync</strong> panel shows your selection</span>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <span>Edit the replacement text and click <strong>Replace</strong></span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ─── Supported Sites ─── -->
+  <section class="card">
+    <h2 class="card-title">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+      Supported Elements
+    </h2>
+    <div class="tags">
+      <span class="tag">&lt;input&gt;</span>
+      <span class="tag">&lt;textarea&gt;</span>
+      <span class="tag">contentEditable</span>
+      <span class="tag">role="textbox"</span>
+    </div>
+    <p class="note">Works on ChatGPT, Google Docs*, Gmail, GitHub, and all standard form fields.</p>
+    <p class="note small">*Google Docs uses a custom rendering engine; contentEditable support is best-effort.</p>
+  </section>
+
+  <!-- ─── Features ─── -->
+  <section class="card">
+    <h2 class="card-title">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+      Features
+    </h2>
+    <ul class="feature-list">
+      <li>🔄 Real-time two-way text sync</li>
+      <li>📋 One-click copy selected text</li>
+      <li>✏️ Edit & replace inline</li>
+      <li>🎯 Cursor position preserved</li>
+      <li>📦 Draggable floating panel</li>
+      <li>🌐 Works across all websites</li>
+      <li>⚡ React-compatible (execCommand)</li>
+      <li>🔍 MutationObserver for SPAs</li>
+    </ul>
+  </section>
+
+  <!-- ─── Footer ─── -->
+  <footer class="footer">
+    <span>Built with ❤️ for productivity</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

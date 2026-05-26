@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head><title>Convert SVG Icons to PNG</title></head>
+<body style="background:#1a1a2e;color:#e2e8f0;font-family:sans-serif;padding:40px;">
+<h1>TextSync Icon Converter</h1>
+<p>Click each button to download the PNG icon at the correct size.</p>
+<div id="output" style="display:flex;gap:24px;margin-top:24px;"></div>
+<script>
+const sizes = [16, 48, 128];
+const container = document.getElementById('output');
+
+sizes.forEach(size => {
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d');
+  
+  const p = size / 128;
+  
+  // Background gradient
+  const grad = ctx.createLinearGradient(0, 0, size, size);
+  grad.addColorStop(0, '#7c3aed');
+  grad.addColorStop(1, '#4f46e5');
+  
+  // Rounded rect
+  const r = 24 * p;
+  ctx.beginPath();
+  ctx.moveTo(r, 0);
+  ctx.arcTo(size, 0, size, size, r);
+  ctx.arcTo(size, size, 0, size, r);
+  ctx.arcTo(0, size, 0, 0, r);
+  ctx.arcTo(0, 0, size, 0, r);
+  ctx.closePath();
+  ctx.fillStyle = grad;
+  ctx.fill();
+  
+  // Selection highlight bar
+  ctx.fillStyle = 'rgba(255,255,255,0.2)';
+  ctx.fillRect(16*p, 48*p, 96*p, 24*p);
+  
+  // Letter "T"
+  ctx.fillStyle = '#ffffff';
+  ctx.font = `bold ${Math.round(56*p)}px Arial, sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('T', size*0.42, size*0.56);
+  
+  // Pencil
+  if (size >= 48) {
+    ctx.save();
+    ctx.translate(88*p, 28*p);
+    ctx.rotate(Math.PI/4);
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(-5*p, -20*p, 10*p, 40*p);
+    // Tip
+    ctx.beginPath();
+    ctx.moveTo(-5*p, 20*p);
+    ctx.lineTo(5*p, 20*p);
+    ctx.lineTo(0, 28*p);
+    ctx.closePath();
+    ctx.fillStyle = '#fbbf24';
+    ctx.fill();
+    // Eraser
+    ctx.fillStyle = '#f87171';
+    ctx.fillRect(-5*p, -20*p, 10*p, 6*p);
+    ctx.restore();
+  }
+  
+  // Display and download link
+  const wrapper = document.createElement('div');
+  wrapper.style.cssText = 'text-align:center;';
+  
+  const img = document.createElement('img');
+  img.src = canvas.toDataURL('image/png');
+  img.style.cssText = `width:${Math.max(size,64)}px;height:${Math.max(size,64)}px;image-rendering:pixelated;border:1px solid rgba(255,255,255,0.1);border-radius:8px;`;
+  wrapper.appendChild(img);
+  
+  const link = document.createElement('a');
+  link.download = `icon${size}.png`;
+  link.href = canvas.toDataURL('image/png');
+  link.textContent = `Download icon${size}.png`;
+  link.style.cssText = 'display:block;margin-top:12px;color:#a78bfa;text-decoration:none;font-size:14px;';
+  wrapper.appendChild(link);
+  
+  container.appendChild(wrapper);
+});
+</script>
+</body>
+</html>
