@@ -7,6 +7,6 @@
   </defs>
   <rect width="48" height="48" rx="10" fill="url(#g)"/>
   <rect x="8" y="18" width="32" height="12" rx="2" fill="rgba(255,255,255,0.2)"/>
-  <text x="24" y="34" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="28" fill="white">T</text>
+  <text x="24" y="34.5" text-anchor="middle" font-family="Arial,sans-serif" font-weight="bold" font-size="26" fill="white">S</text>
   <path d="M36 8 L42 14 L30 26 L26 27 L27 23 Z" fill="white" opacity="0.9"/>
 </svg>

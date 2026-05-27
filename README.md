@@ -1,8 +1,8 @@
-# TextSync — Live Selection Mirror
+# seiyaa — Smart Enhanced Input Yielding AI Assistance
 
 > **Chrome Extension** for real-time two-way text synchronization between a floating control panel and any webpage input/textarea.
 
-![TextSync](icons/icon128.svg)
+![seiyaa](icons/icon128.svg)
 
 ---
 
@@ -14,7 +14,9 @@
 | ✏️ **Edit & Replace** | Modify selected text and replace it inline instantly |
 | 📋 **One-click Copy** | Copy selected text to clipboard |
 | 🎯 **Cursor Preserved** | Cursor position is maintained after replacement |
-| 📦 **Draggable Panel** | Floating control panel can be repositioned |
+| 📦 **Collapsible Circle** | Shrinks into a subtle 72px floating circle in the bottom-right |
+| ⌨️ **Keyboard Shortcut** | Toggle the panel visibility instantly by pressing `Alt + S` |
+| 📦 **Draggable Panel** | Floating control panel can be repositioned when expanded |
 | 🌐 **Universal** | Works across all websites (ChatGPT, Gmail, GitHub, etc.) |
 | ⚡ **React-compatible** | Uses `execCommand('insertText')` for framework-friendly event firing |
 | 🔍 **SPA-aware** | MutationObserver detects dynamically mounted elements |
@@ -56,8 +58,11 @@ show-select/
 3. **Use it**:
    - Navigate to any webpage (e.g., ChatGPT, Gmail, GitHub)
    - Click into a text input or textarea
-   - Select some text — the floating **TextSync** panel appears in the bottom-right
-   - Edit the replacement text and click **Replace**
+   - You'll see a floating **seiyaa** circle in the bottom-right corner.
+   - Click the circle or press **Alt + S** on your keyboard to expand it.
+   - Select some text on the page — the expanded panel displays the selection.
+   - Edit the replacement text and click **Replace**.
+   - Press **Alt + S** or click the close button `✕` to collapse it back.
 
 ---
 
@@ -80,13 +85,13 @@ show-select/
 │                       └──────────┬──────────────────┘    │
 │                                  │                        │
 │                       ┌──────────▼──────────────────┐    │
-│                       │  Floating TextSync Panel     │    │
+│                       │  Floating seiyaa Panel      │    │
 │                       │  ┌──────────────────────┐   │    │
 │                       │  │ Selected Text (r/o)  │   │    │
 │                       │  ├──────────────────────┤   │    │
 │                       │  │ Replacement Text      │   │    │
 │                       │  ├──────────────────────┤   │    │
-│                       │  │ [Replace] [Copy] [X]  │   │    │
+│                       │  │ [Replace] [Copy] [✕]  │   │    │
 │                       │  └──────────────────────┘   │    │
 │                       └─────────────────────────────┘    │
 └──────────────────────────────────────────────────────────┘
@@ -116,8 +121,9 @@ Normal websites are sandboxed by the browser's **Same-Origin Policy**. A webpage
 ## 🎨 Design
 
 - **Glassmorphism** dark theme with `backdrop-filter: blur(24px)`
-- **Draggable** floating panel (grab the header to reposition)
-- **Collapsible** panel body via the toggle button
+- **Collapsible Circle** — default state is a 72px circle with a subtle glow/pulse animation
+- **Keyboard Toggle** — press `Alt + S` to expand or collapse it instantly
+- **Draggable** floating panel when expanded (grab the header to reposition)
 - **Toast notifications** for feedback (replaced, copied, cleared)
 - **Responsive** — adapts to narrow viewports
 - **z-index: 2147483647** — always renders above page content

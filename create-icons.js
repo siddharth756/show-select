@@ -50,12 +50,12 @@ function drawIcon(size) {
   ctx.fillStyle = 'rgba(255,255,255,0.2)';
   ctx.fillRect(16*p, 48*p, 96*p, 24*p);
   
-  // "T"
+  // "S"
   ctx.fillStyle = '#ffffff';
-  ctx.font = `bold ${Math.round(56*p)}px Arial`;
+  ctx.font = `bold ${Math.round(54*p)}px Arial`;
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText('T', size*0.42, size*0.56);
+  ctx.fillText('S', size*0.42, size*0.56);
   
   return canvas.toBuffer('image/png');
 }

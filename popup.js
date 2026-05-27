@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- *  TextSync — Popup Script (popup.js)
+ *  seiyaa — Popup Script (popup.js)
  * ============================================================================
  *
  *  This script runs inside the extension popup (the small panel that opens
@@ -50,7 +50,7 @@
       setStatus('active', 'Extension Active — Panel is live on this page');
 
     } catch (err) {
-      console.error('TextSync popup error:', err);
+      console.error('seiyaa popup error:', err);
       setStatus('error', 'Could not determine status');
     }
   }
@@ -64,7 +64,7 @@
         label: 'Active',
         pill: 'Running',
         pillClass: 'active',
-        desc: 'The floating TextSync panel is live on this page. Select text in any input field to begin.',
+        desc: 'The floating seiyaa panel is live on this page. Select text in any input field to begin.',
         dotColor: '#10b981',
       },
       restricted: {

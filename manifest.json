@@ -1,11 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "TextSync — Live Selection Mirror",
+  "name": "seiyaa — Smart Enhanced Input Yielding AI Assistance",
   "version": "1.0.0",
-  "description": "Real-time two-way text synchronization between a floating control panel and any webpage input/textarea. Select text, edit it, and replace it instantly.",
+  "description": "Smart Enhanced Input Yielding AI Assistance. Real-time two-way text synchronization between a floating control panel and any webpage input/textarea. Select text, edit it, and replace it instantly.",
   "permissions": [
     "activeTab",
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "host_permissions": [
     "<all_urls>"
